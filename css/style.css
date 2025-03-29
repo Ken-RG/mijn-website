@@ -1,37 +1,70 @@
-/*.themed-grid-col {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    background-color: rgba(86, 61, 124, .15);
-    border: 1px solid rgba(86, 61, 124, .2);
-  }
-
-.kleur-fluid {
-    background-color: #0A758E;
-  }
-
-.text-custom {
-    color: #0A758E;
-  } */
-
-.body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><line x1="0" y1="16" x2="32" y2="16" stroke="black" /><line x1="16" y1="0" x2="16" y2="32" stroke="black" /><rect x="14" y="14" width="4" height="4" fill="black" /></svg>') 16 16, auto;
+body {
+  color: rgb(64, 64, 64);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
-/* X-Small devices (portrait phones, less than 576px)
-No media query for `xs` since this is the default in Bootstrap */
+nav ul li {
+  display: flex;
+  justify-content: center;
+}
 
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {}
+nav ul li a {
+  color: rgb(64, 64, 64);
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 10px 20px;
+}
 
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {}
+nav ul li a:hover {
+  background-color: rgb(160, 225, 255);
+}
 
-/* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {}
+footer {
+  padding: 20px;
+  text-align: right;
+  font-size: 14px;
+}
 
-/* X-Large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {}
+footer a {
+  color: rgb(64, 64, 64);
+}
 
-/* XX-Large devices (larger desktops, 1400px and up)*/
-@media (min-width: 1400px) {}
+/* Menu-items onder elkaar op kleine schermen */
+@media (max-width: 720px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+  }
+
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(15px, 75vw, 100px); /* Dynamische ruimte tussen items */
+  }
+}
