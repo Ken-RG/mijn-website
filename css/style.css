@@ -66,6 +66,32 @@ footer a {
 
 }
 
+/* Alle projectafbeeldingen zelfde hoogte */
+.project-gallery img {
+  height: 180px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Projecten in een rij op brede schermen, onder elkaar vanaf 720px */
+@media (max-width: 719px) {
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-gallery img {
+    width: 80%;
+    height: auto;
+  }
+}
+
 @media (min-width: 768px) {
   nav ul {
     flex-direction: row;
