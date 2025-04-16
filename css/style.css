@@ -1,75 +1,68 @@
+/* Algemene kleuren en fonts */
 body {
   color: rgb(64, 64, 64);
+  font-family: 'Courier New', monospace;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Navigatie menu */
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-nav ul li {
-  display: flex;
-  justify-content: center;
+  gap: clamp(10px, 5vw, 25px); /* Responsieve tussenruimte */
+  margin-bottom: 50px; /* Marge onder navigatie */
 }
 
 nav ul li a {
-  color: rgb(64, 64, 64);
-  font-family: 'Courier New', monospace;
   font-size: 24px;
   text-decoration: none;
+  color: rgb(64, 64, 64);
   padding: 10px 20px;
 }
 
-nav ul li a:hover { /* snappend kleurvlak voor navigatie */
-  background-color: rgb(160, 225, 255);
+nav ul li a:hover {
+  background-color: rgb(160, 225, 255); /* Hover blauw */
 }
 
-nav ul li a.active { /* vast kleurvlak voor actieve pagina */
-  background-color: rgb(255, 145, 0);
-  color: white; 
+nav ul li a.active {
+  background-color: rgb(255, 145, 0); /* Actieve pagina oranje */
+  color: white;
 }
 
-footer {
-  padding: 20px;
-  text-align: right;
-  font-size: 14px;
+/* Projectenband container */
+.project-band-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: rgb(255, 240, 210); /* Oranje achtergrondband */
+  overflow: hidden;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-footer a {
-  color: rgb(64, 64, 64);
+/* Horizontale galerij */
+.project-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 0 2rem;
+  justify-content: center;
 }
 
-/* Menu-items onder elkaar op kleine schermen */
-@media (max-width: 720px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav ul li a {
-    display: block;
-    width: 100%;
-  }
-
+.project-gallery::-webkit-scrollbar {
+  display: none; /* Scrollbalk verbergen */
 }
 
-/* Alle projectafbeeldingen zelfde hoogte */
 .project-gallery img {
   height: 180px;
-  width: auto;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -79,23 +72,46 @@ footer a {
   transform: scale(1.05);
 }
 
-/* Projecten in een rij op brede schermen, onder elkaar vanaf 720px */
-@media (max-width: 719px) {
-  .project-gallery {
+/* Scrollpijlen */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 10px;
+  display: none; /* Alleen zichtbaar indien scroll nodig is */
+}
+
+.scroll-arrow.left {
+  left: 0;
+}
+
+.scroll-arrow.right {
+  right: 0;
+}
+
+/* Kleine schermen (zoals smartphones) */
+@media (max-width: 720px) {
+  /* Menu-items onder elkaar */
+  nav ul {
     flex-direction: column;
     align-items: center;
   }
 
-  .project-gallery img {
-    width: 80%;
-    height: auto;
+  /* Projecten onder elkaar met vaste breedte */
+  .project-gallery {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
   }
-}
 
-@media (min-width: 768px) {
-  nav ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: clamp(15px, 75vw, 100px); /* Dynamische ruimte tussen items */
+  .project-gallery img {
+    height: auto;
+    width: 80%;
   }
 }
