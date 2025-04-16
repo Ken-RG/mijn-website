@@ -28,8 +28,13 @@ nav ul li a {
   padding: 10px 20px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover { /* snappend kleurvlak voor navigatie */
   background-color: rgb(160, 225, 255);
+}
+
+nav ul li a.active { /* vast kleurvlak voor actieve pagina */
+  background-color: rgb(255, 145, 0);
+  color: white; 
 }
 
 footer {
