@@ -1,117 +1,204 @@
-/* Algemene kleuren en fonts */
 body {
-  color: rgb(64, 64, 64);
-  font-family: 'Courier New', monospace;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Navigatie menu */
-nav ul {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: clamp(10px, 5vw, 25px); /* Responsieve tussenruimte */
-  margin-bottom: 50px; /* Marge onder navigatie */
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  color: rgb(64, 64, 64);
+  background: #fff;
 }
 
-nav ul li a {
+/* centreren menu-items ifv schermbreedte */
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 5vw, 100px);
+  flex-wrap: nowrap;
+}
+
+/* opmaak menu-links */
+.menu-list li a {
+  color: rgb(64, 64, 64);
   font-size: 24px;
   text-decoration: none;
-  color: rgb(64, 64, 64);
   padding: 10px 20px;
+  white-space: nowrap;
 }
 
-nav ul li a:hover {
-  background-color: rgb(160, 225, 255); /* Hover blauw */
+/* kleurvlak selectie */
+.menu-list li a:hover {
+  background-color: rgb(160, 225, 255);
 }
 
-nav ul li a.active {
-  background-color: rgb(255, 145, 0); /* Actieve pagina oranje */
+/* kleurvlak actieve pagina */
+.menu-list li a.active {
+  background-color: rgb(255, 145, 0);
   color: white;
 }
 
-/* Projectenband container */
+/* main content afstand onder menubalk */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 55vh;
+  padding-bottom: 40px;
+}
+
 .project-band-wrapper {
+  /* background-color: rgb(255, 240, 210); // oranje achtergrond weg*/
+  margin-top: 20px;
   position: relative;
   width: 100%;
-  background-color: rgb(255, 240, 210); /* Oranje achtergrondband */
   overflow: hidden;
-  padding: 1rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-bottom: 30px;
 }
 
-/* Horizontale galerij */
+/* horizontale projectgalerij */
 .project-gallery {
   display: flex;
+  gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 20px;
-  padding: 0 2rem;
+  padding: 10px 20px;
   justify-content: center;
 }
 
+/* scrollbar verbergen */
 .project-gallery::-webkit-scrollbar {
-  display: none; /* Scrollbalk verbergen */
+  display: none;
 }
 
+/* formaat projectafbeeldingen */
 .project-gallery img {
   height: 180px;
+  width: 240px;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
+/* hover-effect afbeelding */
 .project-gallery img:hover {
   transform: scale(1.05);
 }
 
-/* Scrollpijlen */
+/* opmaak scrollpijlen */
 .scroll-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 32px;
+  font-size: 2rem;
   color: black;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 10;
-  padding: 0 10px;
-  display: none; /* Alleen zichtbaar indien scroll nodig is */
+  user-select: none;
+  padding: 0;
 }
 
+/* linker scrollpijl */
 .scroll-arrow.left {
-  left: 0;
+  left: 10px;
 }
 
+/* rechter scrollpijl */
 .scroll-arrow.right {
-  right: 0;
+  right: 10px;
 }
 
-/* Kleine schermen (zoals smartphones) */
+/* opmaak tekstblok deel projecten */
+.project-text {
+  flex-grow: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* opmaak project container */
+.project-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* opmaak project afbeelding */
+.project-detail img {
+  height: 210px;         /* formaat hier aan te passen */
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* opmaak footer */
+.footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* gedeelde typografische stijl voor beide footers */
+.footer-style {
+  font-size: 14px;
+  color: rgb(64, 64, 64);
+}
+
+/* footer links */
+.footer a {
+  display: block;
+  margin-top: 2px; /* consistente afstand */
+  text-decoration: underline;
+}
+
+/* algemene linkkleur */
+a:link, a:visited {
+  color: rgb(64, 64, 64);
+}
+
+/* mobiele layout */
 @media (max-width: 720px) {
-  /* Menu-items onder elkaar */
-  nav ul {
+  /* menu-items onder elkaar */
+  .menu-list {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
-  /* Projecten onder elkaar met vaste breedte */
+  /* galerij onder elkaar */
   .project-gallery {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
   }
 
+  /* schaal project band mobiel */
   .project-gallery img {
-    height: auto;
-    width: 80%;
+    width: 80vw;
+    height: 180px;
+  }
+
+   /* opmaak project container mobiel */
+  .project-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+   /* opmaak project afbeelding mobiel */
+  .project-image {
+    width: 80vw;
+    max-width: 240px;
+    height: 180px;
+  }
+
+  /* extra marge mobiel */
+  .main-content {
+    margin-top: 60vh;
   }
 }
