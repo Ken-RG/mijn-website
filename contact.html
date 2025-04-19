@@ -17,9 +17,9 @@
   <nav class="menu-center position-absolute top-50 start-50 translate-middle">
     <ul class="menu-list list-unstyled fw-bold">
       <li><a href="index.html">Home</a></li>
-      <li><a href="over-mij.html" class="active">Over-mijzelf</a></li>
+      <li><a href="over-mij.html">Over-mijzelf</a></li>
       <li><a href="projecten.html">Projecten</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 
@@ -32,20 +32,61 @@
         <article class="project project-detail">
           <!-- Afbeelding links -->
           <abbr title="Contact">
-            <img src="assets/Ikke hcmb.jpg" alt="Contact">
+            <img src="assets/mail-icon.png" alt="Contact">
           </abbr>
         
           <!-- Tekstblok met titel en beschrijving -->
-          <div class="project-text">
-            <h1 class="ms-4">Contact</h1>
-            <p class="ms-4">
-                Heeft u een vraag? Vul onderstaand formulier in en ik contacteer u zo snel mogelijk terug.
-            </p>
+          <div class="container">
+            <div class="row">
+              <form action="#" method="post">
+                <h2 class="fw-bold">CONTACT</h2>
+                <p>Heeft u een vraag? Vul onderstaand formulier in.</p>
+                <p>Velden met een<span> *</span> zijn verplicht.</p>
+    
+                <div class="row g-3 mb-3">
+                  <fieldset class="col-md-12">
+                    <legend class="fs-4 fw-bold mt-4 mb-3">GEGEVENS</legend>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="exampleInputFname1" class="form-label">voornaam<span> *</span></label>
+                        <input type="text" class="form-control" id="exampleInputFname1">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="exampleInputLname1" class="form-label">achternaam<span> *</span></label>
+                        <input type="text" class="form-control" id="exampleInputLname1">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="exampleInputLname1" class="form-label">e-mail<span> *</span></label>
+                        <input type="text" class="form-control" id="exampleInputLname1">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="exampleInputLname1" class="form-label">stel uw vraag hier<span> *</span></label>
+                        <input type="text" class="form-control" id="exampleInputLname1">
+                      </div>
+                    </div>
+                <!--<div class="row">
+                      <div class="col-md-6">
+                        <label for="exampleInputMobile1" class="form-label">mobiel<span> *</span></label>
+                        <input type="tel" class="form-control" id="exampleInputMobile1">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="exampleInputBdate1" class="form-label">geboortedatum<span> *</span></label>
+                        <input type="date" class="form-control" id="exampleInputBdate1">
+                      </div>-->
+                    </div>
+                  </fieldset>
+                </div>    
+              
+                <div class="row g-3 mb-3 text-start">
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-blauwgrijs py-2 px-4">verzenden</button>
+                  </div>
+                </div>
+              </form>
+            </div>    
           </div>
         </article>
-       </section>
-
-
+      </section>
     </section>
 
   </main>
