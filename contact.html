@@ -64,19 +64,25 @@
                   </fieldset>
                 </div>
 
-                <div class="row g-3 mb-3 text-start">
+                <div class="row g-3 mt-3 text-start">
                   <div class="col-md-12">
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input me-2 checkbox-align" id="kopieOntvangen" name="kopieOntvangen">
                       <label class="form-check-label" for="kopieOntvangen">Ik wens een kopie van mijn vraag via mail te ontvangen.</label>
                     </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="akkoordPrivacy" required>
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Ik ga hierbij akkoord met het <a href="/privacy.html">privacybeleid</a>.
+                      </label>
+      
                   </div>
 
                   <!-- verborgen veld voor Formspree om kopie te sturen -->
                   <input type="hidden" name="_cc" id="cc-email" value="">
 
                   <div class="col-md-12">
-                    <button type="submit" class="btn btn-color py-2 px-4">verzenden</button>
+                    <button type="submit" class="btn btn-color py-2 px-4 mt-3">verzenden</button>
                   </div>
                 </div>
               </form>
@@ -104,7 +110,7 @@
 
     <footer class="footer mt-4 text-end footer-style" style="margin-right: 3rem;">
         <p class="mb-0">&copy; 2025 Ken Cardon</p>
-        <a href="/legal/privacy.html">Legal notice</a>
+        <a href="privacy.html" target="_blank" rel="noopener noreferrer">Legal notice</a>
     </footer>
 
 </body>
