@@ -14,9 +14,22 @@ rightArrow.addEventListener("click", () => {
 
 function updateArrows() {
     const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    
+    if (scrollContainer.scrollWidth <= scrollContainer.clientWidth) {
+        // Alles past, geen pijlen tonen
+        leftArrow.style.display = "none";
+        rightArrow.style.display = "none";
+    } else { // beide pijlen zichtbaar
+        leftArrow.style.display = scrollContainer.scrollLeft > 0 ? "block" : "block";
+        rightArrow.style.display = scrollContainer.scrollLeft < maxScroll ? "block" : "none";
+    }
+}
+
+/*function updateArrows() {
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
     leftArrow.style.display = scrollContainer.scrollLeft > 0 ? "block" : "none";
     rightArrow.style.display = scrollContainer.scrollLeft < maxScroll ? "block" : "none";
-}
+}*/ // enkel de rechterpijl is zichtbaar tenzij er eerst naar rechts wordt gescrold
 
 scrollContainer.addEventListener("scroll", updateArrows);
 window.addEventListener("resize", updateArrows);
