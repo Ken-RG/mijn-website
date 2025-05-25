@@ -1,6 +1,4 @@
-// hier assistentie gebruikt om de scroll pijlen weer te geven
-
-const scrollContainer = document.querySelector(".project-gallery");
+const scrollContainer = document.querySelector(".project-gallery-outer");
 const leftArrow = document.getElementById("scrollLeft");
 const rightArrow = document.getElementById("scrollRight");
 
@@ -14,10 +12,23 @@ rightArrow.addEventListener("click", () => {
 
 function updateArrows() {
     const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-    leftArrow.style.display = scrollContainer.scrollLeft > 0 ? "block" : "none";
-    rightArrow.style.display = scrollContainer.scrollLeft < maxScroll ? "block" : "none";
-} // enkel de rechterpijl is zichtbaar tenzij er eerst naar rechts wordt gescrold
+    const isScrollable = scrollContainer.scrollWidth > scrollContainer.clientWidth;
+
+    leftArrow.style.display = isScrollable && scrollContainer.scrollLeft > 0 ? "block" : "none";
+    rightArrow.style.display = isScrollable && scrollContainer.scrollLeft < maxScroll ? "block" : "none";
+}
+
+function centerGallery() {
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    scrollContainer.scrollLeft = maxScroll / 2;
+}
 
 scrollContainer.addEventListener("scroll", updateArrows);
-window.addEventListener("resize", updateArrows);
-window.addEventListener("load", updateArrows);
+window.addEventListener("resize", () => {
+    updateArrows();
+    centerGallery();
+});
+window.addEventListener("load", () => {
+    updateArrows();
+    centerGallery();
+});

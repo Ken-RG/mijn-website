@@ -1,9 +1,55 @@
+/* algemene linkkleur */
+a:link, a:visited {
+  color: rgb(64, 64, 64);
+}
+
+/* algemene tektstijl */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Courier New', monospace;
   color: rgb(64, 64, 64);
   background: #fff;
+}
+
+/* opmaak knop contact verzenden */
+.btn-color {
+  background-color: rgb(255, 145, 0);
+  color: white;
+}
+
+/* opmaak knop contact verzenden */
+.btn-color:hover {
+  background-color: rgb(160, 225, 255);
+}
+
+/* opmaak footer */
+.footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* gedeelde typografische stijl voor beide footers */
+.footer-style {
+  font-size: 14px;
+  color: rgb(64, 64, 64);
+}
+
+/* footer links */
+.footer a {
+  display: block;
+  margin-top: 2px;
+  text-decoration: underline;
+}
+
+/* main content afstand onder menubalk */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 55vh;
+  padding-bottom: 40px;
 }
 
 /* centreren menu-items ifv schermbreedte */
@@ -36,37 +82,56 @@ body {
   color: white;
 }
 
-/* main content afstand onder menubalk */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 55vh;
-  padding-bottom: 40px;
+/* opmaak privacyverklaring */
+.privacy-wrapper {
+  max-width: 800px;
+  margin: 80px auto 40px auto;
+  padding-top: 160px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  line-height: 1.6;
+}
+
+.privacy-wrapper h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.privacy-wrapper h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .project-band-wrapper {
   /* background-color: rgb(255, 240, 210); // oranje achtergrond weg*/
-  margin-top: 20px;
   position: relative;
   width: 100%;
+  max-width: 100vw;
   overflow: hidden;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 /* horizontale projectgalerij */
 .project-gallery {
   display: flex;
   gap: 20px;
+  width: max-content;
+  margin: 0 auto; 
+}
+
+/* horizontale scrol container */
+.project-gallery-outer {
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 20px 10px 20px;
-  justify-content: flex-start;
+  display: block;
+  padding: 10px 20px 100px 20px;
 }
 
 /* scrollbar verbergen */
-.project-gallery::-webkit-scrollbar {
+.project-gallery-outer::-webkit-scrollbar {
   display: none;
 }
 
@@ -82,6 +147,57 @@ body {
 /* hover-effect afbeelding */
 .project-gallery img:hover {
   transform: scale(1.05);
+}
+
+/* opmaak container deel projecten */
+.project-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* formaat afbeelding deel projecten */
+.project-detail img {
+  height: 210px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+/* opmaak tekstblok deel projecten */
+.project-text {
+  flex-grow: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* opmaak figcaptions */
+.project-figure {
+  position: relative;
+  margin: 0;
+}
+
+.project-caption {
+  position: absolute;
+  margin-top: 15px;
+/*top: 50%;*/ /*of gecentreerd */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #aaa;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
 }
 
 /* opmaak scrollpijlen */
@@ -112,98 +228,19 @@ body {
   right: 10px;
 }
 
-/* opmaak tekstblok deel projecten */
-.project-text {
-  flex-grow: 1;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* opmaak project container */
-.project-detail {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* opmaak project afbeelding */
-.project-detail img {
-  height: 210px;         /* formaat hier aan te passen */
-  width: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
-  margin-right: 20px;
-}
-
-/* opmaak knop contact verzenden */
-.btn-color {
-  background-color: rgb(255, 145, 0);
-  color: white;
-}
-
-/* opmaak knop contact verzenden */
-.btn-color:hover {
-  background-color: rgb(160, 225, 255);
-}
-
-/* opmaak footer */
-.footer {
-  text-align: center;
-  padding-top: 20px;
-}
-
-/* gedeelde typografische stijl voor beide footers */
-.footer-style {
-  font-size: 14px;
-  color: rgb(64, 64, 64);
-}
-
-/* footer links */
-.footer a {
-  display: block;
-  margin-top: 2px; /* consistente afstand */
-  text-decoration: underline;
-}
-
-/* algemene linkkleur */
-a:link, a:visited {
-  color: rgb(64, 64, 64);
-}
-
-/* opmaak privacyverklaring */
-.privacy-wrapper {
-  max-width: 800px;
-  margin: 80px auto 40px auto;
-  padding-top: 160px; /* iets meer dan de logohoogte */
-  padding-left: 2rem;
-  padding-right: 2rem;
-  line-height: 1.6;
-}
-
-.privacy-wrapper h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.privacy-wrapper h2 {
-  font-size: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
 
 /* mobiele layout */
 @media (max-width: 720px) {
+  
   /* menu-items onder elkaar */
   .menu-list {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+  }
+
+  /* extra marge mobiel */
+  .main-content {
+    margin-top: 65vh;
   }
 
   /* galerij onder elkaar */
@@ -211,12 +248,15 @@ a:link, a:visited {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    padding-bottom: 100px;
   }
 
   /* schaal project band mobiel */
   .project-gallery img {
     width: 80vw;
     height: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
    /* opmaak project container mobiel */
@@ -235,10 +275,5 @@ a:link, a:visited {
 
   .scroll-arrow {
     display: none;
-  }
-
-  /* extra marge mobiel */
-  .main-content {
-    margin-top: 60vh;
   }
 }
