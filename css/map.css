@@ -1,7 +1,39 @@
-#map {
-    /* neem de volle breedte in van het parent element en heeft een hoogte van 250px */
-    width: 100%;
-    height: 250px;
+.map-wrapper {
+  max-width: 1020px;
+  padding-left: 240px;
+  padding-right: 0px;
+  margin: 0 auto;
+}
+
+#Map {
+  width: 100%;
+  height: 300px;
+}
 
 
+@media (max-width: 1280px) {
+  .map-wrapper {
+    padding-left: 240px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .map-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .map-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 720px) {
+  .map-wrapper {
+    padding: 0 16px;
+  }
 }

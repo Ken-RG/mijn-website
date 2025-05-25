@@ -251,7 +251,7 @@ body {
     padding-bottom: 100px;
   }
 
-  /* schaal project band mobiel */
+  /* formaat afbeelding project galerij mobiel */
   .project-gallery img {
     width: 80vw;
     height: auto;
@@ -259,15 +259,15 @@ body {
     margin-bottom: 10px;
   }
 
-   /* opmaak project container mobiel */
+  /* opmaak project detail mobiel */
   .project-detail {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-   /* opmaak project afbeelding mobiel */
-  .project-image {
+  /* formaat project detail afbeelding mobiel */
+  .project-detail img {
     width: 80vw;
     max-width: 240px;
     height: 180px;
